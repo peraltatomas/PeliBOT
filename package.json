@@ -1,0 +1,22 @@
+{
+  "name": "nosequever",
+  "version": "0.0.1",
+  "description": "Hey! I'm a Twitter Bot that recommends movies.",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peraltatomas/PeliBOT.git"
+  },
+  "author": "Tomas Peralta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peraltatomas/PeliBOT/issues"
+  },
+  "homepage": "https://github.com/peraltatomas/PeliBOT#readme",
+  "dependencies": {
+    "twit": "^2.2.11"
+  }
+}
