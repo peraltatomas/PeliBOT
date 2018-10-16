@@ -1,6 +1,6 @@
 # PeliBOT
 
-A Twitter Bot that recommends movies. See it in action [here](htts://www.twitter.com/nosequever)
+A Twitter Bot that recommends movies. See it in action [here](https://www.twitter.com/nosequever)
 
 ## Getting Started
 
