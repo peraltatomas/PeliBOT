@@ -2,6 +2,7 @@ var config = require('./config.js');
 var Twit = require('twit'); // Twit object to connect to the Twitter API
 
 // Initializes Twit object
+console.log(config.twitter_api);
 var peliBot = new Twit(config.twitter_api);
 
 var stream = peliBot.stream('statuses/filter', {follow : config.twitter_user_id});
@@ -24,7 +25,7 @@ function checkEvent(eventMsg) {
 // So the bot doesn't recommend shitty movies.
 function getRandomMovie(user) {
     // TheMovieDB credentials
-    var api_key = require('./config.js').movies_database_api;
+    var api_key = require('./config.js').movies_database_api_key;
     var api_page = Math.floor((Math.random() * 10) + 1); // Random results page
     var api_url = 'https://api.themoviedb.org/3/discover/movie?api_key=' + api_key + '&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=' + api_page + '&vote_count.gte=20&vote_average.gte=7';
 
@@ -43,7 +44,7 @@ function getRandomMovie(user) {
             var moviePosterURL = 'https://image.tmdb.org/t/p/w500' + movie['poster_path '];
             var movieReleaseYear = movie['release_date'].split("-")[0];
 
-            toTeet = "@" + user + " hoy podrías ver " + movieTitle + " (" + movieReleaseYear + "). Más info: " + movieURL;
+            toTweet = "@" + user + " hoy podrías ver " + movieTitle + " (" + movieReleaseYear + "). Más info: " + movieURL;
         } else {
             toTweet = "@" + user + " algo salió mal al intentar recomendarte una película. Puedes intentarlo de nuevo más tarde?";
         }
@@ -64,3 +65,8 @@ function tweetIt(tweet) {
         }
     }
 }
+
+// Handles error
+stream.on('error', function (err) {
+    console.log(err);
+});
