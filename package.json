@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/peraltatomas/PeliBOT#readme",
   "dependencies": {
-    "twit": "^2.2.11"
+    "twit": "^2.2.11",
+    "xmlhttprequest": "^1.8.0"
   }
 }
